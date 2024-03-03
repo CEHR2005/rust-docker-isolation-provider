@@ -15,7 +15,7 @@ struct Ctx<T> {
 use serde_json as json;
 
 // Hello world handler in general form
-async |Ctx { _data, _deep, .. }: Ctx<json::Value>| {
+async |Ctx { data, deep, .. }: Ctx<json::Value>| {
     2 + 2
 }
 ```
