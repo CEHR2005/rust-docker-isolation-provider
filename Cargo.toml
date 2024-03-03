@@ -23,7 +23,6 @@ tracing-subscriber = { version = "0.3.17", features = ["ansi", "env-filter"], de
 ariadne = { version = "0.3.0" }
 chumsky = { version = "1.0.0-alpha.6", features = ["label"] }
 
-# todo: patch if needs
 prettyplease = { package = "prettier-please", version = "0.2.0", optional = true }
 syn = { version = "2.0.27", features = ["full"], optional = true }
 

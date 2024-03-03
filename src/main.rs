@@ -1,4 +1,4 @@
-#![feature(result_option_inspect)]
+#![allow(non_local_definitions)]
 
 mod parse;
 mod script;
@@ -16,10 +16,7 @@ use {
         env, fmt, fs, io, mem,
         sync::atomic::{AtomicUsize, Ordering},
     },
-    tokio::{
-        self,
-        sync::{mpsc, oneshot},
-    },
+    tokio::sync::{mpsc, oneshot},
 };
 
 #[cfg(feature = "bytes-stream")]
@@ -119,6 +116,7 @@ async fn call(
     };
     let _ = compile.send((file.into_value(), call, tx)).await;
 
+    #[rustfmt::skip]
     #[allow(unused_variables)]
     let (out, bytes) = rx.await.unwrap(/* invalid sender usage */);
 
